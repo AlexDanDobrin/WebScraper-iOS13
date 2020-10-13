@@ -8,9 +8,16 @@
 
 import UIKit
 import WebKit
+import Firebase
 
 class ViewController: UIViewController, WKUIDelegate {
-
+    
+    @IBOutlet weak var emailsButton: UIButton!
+    @IBOutlet weak var numbersButton: UIButton!
+    @IBOutlet weak var loadButton: UIButton!
+    // Creating a reference to the Firebase database
+    let ref: DatabaseReference! = Database.database().reference()
+    
     private var webView = WKWebView(frame: CGRect.zero, configuration: WKWebViewConfiguration())
     
     @IBOutlet weak var urlField: UITextField!
@@ -24,14 +31,21 @@ class ViewController: UIViewController, WKUIDelegate {
     
     
     @IBAction func emailsPressed(_ sender: Any) {
+        performSegue(withIdentifier: "toEmails", sender: self)
     }
     
     
     @IBAction func numbersPressed(_ sender: Any) {
+        performSegue(withIdentifier: "toNumbers", sender: self)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Some settings to make the corners round
+        emailsButton.layer.cornerRadius = 15.0
+        numbersButton.layer.cornerRadius = 15.0
+        loadButton.layer.cornerRadius = 7.5
+        // Adding webview and setting its anchors
         webView.uiDelegate = self
         view.addSubview(webView)
         webView.translatesAutoresizingMaskIntoConstraints = false

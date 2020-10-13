@@ -21,12 +21,11 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ti2-WN-WKv">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="407"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wWw" translatesAutoresizingMaskIntoConstraints="NO" id="WWO-bd-mKr">
-                                                <rect key="frame" x="20" y="99" width="357" height="179"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wWw" translatesAutoresizingMaskIntoConstraints="NO" id="WWO-bd-mKr">
+                                                <rect key="frame" x="15" y="10" width="384" height="500"/>
                                             </imageView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="R0Z-dG-mBB">
-                                                <rect key="frame" x="20" y="312" width="370" height="34"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="R0Z-dG-mBB">
+                                                <rect key="frame" x="20" y="343" width="370" height="34"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="https://www.mapn.ro//contact/index.php" borderStyle="roundedRect" placeholder="Paste the url here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sJq-BZ-dUZ">
                                                         <rect key="frame" x="0.0" y="0.0" width="280" height="34"/>
@@ -39,6 +38,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88L-4e-LYm">
                                                         <rect key="frame" x="300" y="0.0" width="70" height="34"/>
                                                         <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="loadButton"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="70" id="VzF-Xn-Nft"/>
                                                         </constraints>
@@ -51,12 +51,13 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="86" translatesAutoresizingMaskIntoConstraints="NO" id="DTp-N7-a2i">
-                                                <rect key="frame" x="32" y="20" width="346" height="50"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="86" translatesAutoresizingMaskIntoConstraints="NO" id="DTp-N7-a2i">
+                                                <rect key="frame" x="30" y="50" width="346" height="50"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDV-6D-E90">
                                                         <rect key="frame" x="0.0" y="0.0" width="140" height="50"/>
                                                         <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="emailsButton"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="PRd-n4-6a1"/>
                                                             <constraint firstAttribute="width" constant="140" id="RhN-tg-lcQ"/>
@@ -72,6 +73,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1oy-td-J0f">
                                                         <rect key="frame" x="226" y="0.0" width="120" height="50"/>
                                                         <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="numbersButton"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="J8z-Eb-ays"/>
                                                             <constraint firstAttribute="width" constant="120" id="kKD-uO-UlT"/>
@@ -87,7 +89,15 @@
                                                 </subviews>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="R0Z-dG-mBB" secondAttribute="bottom" constant="30" id="9Fm-se-88z"/>
+                                            <constraint firstItem="DTp-N7-a2i" firstAttribute="leading" secondItem="ti2-WN-WKv" secondAttribute="leading" constant="30" id="NIR-1t-QgI"/>
+                                            <constraint firstItem="WWO-bd-mKr" firstAttribute="leading" secondItem="ti2-WN-WKv" secondAttribute="leading" constant="15" id="O4p-oE-Ipo"/>
+                                            <constraint firstItem="WWO-bd-mKr" firstAttribute="centerX" secondItem="ti2-WN-WKv" secondAttribute="centerX" id="PyQ-gM-vyY"/>
+                                            <constraint firstItem="DTp-N7-a2i" firstAttribute="top" secondItem="ti2-WN-WKv" secondAttribute="top" constant="50" id="QYR-IL-ndW"/>
+                                            <constraint firstItem="R0Z-dG-mBB" firstAttribute="leading" secondItem="ti2-WN-WKv" secondAttribute="leading" constant="20" id="TGC-s0-U6A"/>
+                                            <constraint firstItem="WWO-bd-mKr" firstAttribute="top" secondItem="ti2-WN-WKv" secondAttribute="top" constant="10" id="VhX-TN-v2Q"/>
+                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x6s-bG-tER">
                                         <rect key="frame" x="0.0" y="407" width="414" height="445"/>
@@ -117,12 +127,47 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="emailsButton" destination="TDV-6D-E90" id="PAT-Xn-YvI"/>
+                        <outlet property="loadButton" destination="88L-4e-LYm" id="r2Y-oa-ZWK"/>
+                        <outlet property="numbersButton" destination="1oy-td-J0f" id="gRx-qq-KyG"/>
                         <outlet property="urlField" destination="sJq-BZ-dUZ" id="zZC-wz-Mfr"/>
+                        <segue destination="7vT-65-YgC" kind="presentation" identifier="toEmails" id="yER-lf-8fu"/>
+                        <segue destination="mhV-Z6-lQP" kind="presentation" identifier="toNumbers" id="A27-QY-9ey"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="115.84821428571428"/>
+            <point key="canvasLocation" x="200" y="136"/>
+        </scene>
+        <!--EmailsVC-->
+        <scene sceneID="0wG-P3-MeK">
+            <objects>
+                <viewController id="7vT-65-YgC" customClass="emailsVC" customModule="proiectLFA" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iPE-3D-nR7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Fey-9U-f0o"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Bc-nC-Xnt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="200" y="901"/>
+        </scene>
+        <!--PhonesVC-->
+        <scene sceneID="i1L-mj-n33">
+            <objects>
+                <viewController id="mhV-Z6-lQP" customClass="phonesVC" customModule="proiectLFA" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dAU-oU-QRq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="PMW-ul-uMM"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bjf-Z2-lvW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1058" y="136"/>
         </scene>
     </scenes>
     <resources>
